@@ -1,4 +1,11 @@
-backbone-quiz
-=============
+# [Backbone Quiz]
 
-Quiz application using backbone.js
+Backbone Quiz is a quiz application using [backbone.js](http://backbonejs.org/).
+
+## Libraries Used
+1. [backbone.js](http://backbonejs.org/)
+2. [underscore.js](http://underscorejs.org/)
+3. [require.js](http://requirejs.org/)
+4. [jQuery 1.8.3](http://jquery.com/)
+5. [Jasmine](http://pivotal.github.com/jasmine/)
+6. [sinon.js](http://sinonjs.org/)
