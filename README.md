@@ -1,4 +1,4 @@
-# [Backbone Quiz]
+# [Backbone Quiz](https://github.com/sasidhar/backbone-quiz)
 
 Backbone Quiz is a quiz application using [backbone.js](http://backbonejs.org/).
 
@@ -9,3 +9,4 @@ Backbone Quiz is a quiz application using [backbone.js](http://backbonejs.org/).
 4. [jQuery 1.8.3](http://jquery.com/)
 5. [Jasmine](http://pivotal.github.com/jasmine/)
 6. [sinon.js](http://sinonjs.org/)
+7. [JSHint](http://www.jshint.com/)
