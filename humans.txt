@@ -1,0 +1,20 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    <name> -- <role> -- <twitter>
+    Mohanraj Thanigaivelu -- Developer
+    Manoj Agarwal -- Developer
+    Vanga Sasidhar -- Developer
+
+# TECHNOLOGY COLOPHON
+
+    HTML5
+    CSS3
+    jQuery
+    backbone.js
+    underscore.js
+    require.js
+    jasmine
+    sinon.js
