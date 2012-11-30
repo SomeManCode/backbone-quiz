@@ -2,7 +2,9 @@
 
 describe('JSLint', function () {
     'use strict';
-    var options = {curly: true, white: true, indent: 2};
+    var options = {
+        predef: ['requirejs', 'define']
+    };
     function get(path) {
         path = path + "?" + new Date().getTime();
 
