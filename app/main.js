@@ -21,12 +21,13 @@ requirejs.config({
 });
 
 requirejs(
-    ['dom_ready', 'routers/Router'],
-    function (domReady, Router) {
+    ['dom_ready', 'routers/Router', 'State'],
+    function (domReady, Router, State) {
         'use strict';
         domReady(function () {
             var router = new Router();
             router.init();
+            State.router = router.router;
         });
     }
 );
