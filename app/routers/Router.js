@@ -1,7 +1,11 @@
 //Router
 define(
-    ['backbone'],
-    function (Backbone) {
+    [
+        'jquery',
+        'backbone',
+        'views/ScoreView'
+    ],
+    function ($, Backbone, ScoreView) {
 
         'use strict';
 
@@ -17,7 +21,7 @@ define(
                         "home"          :   "home",
                         "quiz"          :   "quiz",
                         "quiz/q:qno"    :   "quiz",
-                        "result"        :   "result",
+                        "score"         :   "score",
                         "*actions"             :   "home"
                     },
 
@@ -29,8 +33,9 @@ define(
 
                     },
 
-                    result : function () {
-
+                    score : function () {
+                        var scoreView = new ScoreView();
+                        $('#wrapper').html(scoreView.render().el);
                     }
                 });
 
