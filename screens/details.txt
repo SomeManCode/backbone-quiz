@@ -1,0 +1,36 @@
+Buttons
+
+BG                  :   #999999 - #ffffff    (gradient)
+Border              :   #555555    2px    
+Button Text         :   #000000    arial (regular)
+Quit and Pass Text  :  #999999    (bold)    
+
+
+Edit Box
+
+BG                  :   #ffffff    (opacity 15%)
+Border              :   #000000   (opacity 15%)    2px
+Title Text          :   #fffffff     arial (regular)
+Edit Text           :   #ffffff    CuprumFFU    (black drop shadow)
+
+
+Top Bar
+
+BG                  :   #000000     (opacity 50%)
+Question, Weight, 
+Timer Text          :   #00deff / #ff2a00    arial (regular)
+Timer Fill          :   #00deff / #a32a13
+
+
+Question and Options
+
+Questions, Options  :   #ffffff      CuprumFFU      (drop shadow)
+Options BG          :   #ffffff      (normal state - opacity 15%) 
+                                    (hover/select state - opacity 50%)
+
+Results
+
+BG                  :   #000000     (opacity 35%)     (white drop shadow)
+Congratulations     :   #ffffff       georgia (italic)
+Total Score         :   #ffffff       georgia (italic)      (white drop shadow)
+Question Score      :   #ffffff       georgia (regular)      (black drop shadow)
