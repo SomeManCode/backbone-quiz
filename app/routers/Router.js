@@ -1,7 +1,7 @@
 //Router
 define(
-    ['backbone'],
-    function (Backbone) {
+    ['jquery','backbone','views/HomeView', 'views/QuizView'],
+    function ($, Backbone, HomeView, QuizView) {
 
         'use strict';
 
@@ -22,11 +22,13 @@ define(
                     },
 
                     home: function () {
-
+						var homeView = new HomeView();
+						$("#wrapper").html(homeView.render().el);
                     },
 
                     quiz: function (qno) {
-
+						var quizView = new QuizView();
+						$("#wrapper").html(quizView.render().el);
                     },
 
                     result : function () {
