@@ -1,19 +1,22 @@
 /*Home View*/
 
 define(
-	['backbone'],
-	function(Backbone){
+	[
+        'backbone',
+        'text!templates/HomeViewTemplate.html'
+    ],
+	function(Backbone, HomeViewTemplate){
 		var HomeView = Backbone.View.extend({
 			id:"home_view",
-			
 			className:"section",
+			template : HomeViewTemplate,
 			
 			initialize:function(){
 				
 			},
 			
 			render:function(){
-				$(this.el).html("Home View");
+				$(this.el).html(_.template(this.template, {}));
 				return this;
 			}
 		})

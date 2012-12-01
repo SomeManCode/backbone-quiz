@@ -6,7 +6,8 @@ requirejs.config({
         jquery: '../static/libs/jquery/jquery-1.8.3.min',
 
         //requirejs
-        dom_ready : '../static/libs/require/domReady-2.0.1'
+        dom_ready : '../static/libs/require/domReady-2.0.1',
+        text : '../static/libs/require/text-2.0.3'
     },
     shim: {
         'underscore' : {
