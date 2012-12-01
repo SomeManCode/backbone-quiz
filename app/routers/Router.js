@@ -1,8 +1,13 @@
 //Router
 define(
-    ['jquery','backbone','views/HomeView', 'views/QuizView'],
-    function ($, Backbone, HomeView, QuizView) {
-
+    [
+        'jquery',
+        'backbone',
+        'views/ScoreView',
+		'views/HomeView',
+		'views/QuizView'
+    ],
+    function ($, Backbone, ScoreView, HomeView, QuizView) {
         'use strict';
 
         var Router = function () {
@@ -17,7 +22,7 @@ define(
                         "home"          :   "home",
                         "quiz"          :   "quiz",
                         "quiz/q:qno"    :   "quiz",
-                        "result"        :   "result",
+                        "score"         :   "score",
                         "*actions"             :   "home"
                     },
 
@@ -31,8 +36,9 @@ define(
 						$("#wrapper").html(quizView.render().el);
                     },
 
-                    result : function () {
-
+                    score : function () {
+                        var scoreView = new ScoreView();
+                        $('#wrapper').html(scoreView.render().el);
                     }
                 });
 
