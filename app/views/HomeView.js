@@ -1,4 +1,4 @@
-/*Home View*/
+/*Home View Modified*/
 
 define(
 	[
