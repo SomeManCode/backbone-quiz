@@ -9,20 +9,21 @@
     <p>
         <div>
 			Congratulations
+			Score : <%=score %>
 		</div>
     </p>
 	<p>
-		5/10
+		<%=correct_questions %>/<%=total_questions%>
 	</p>
 </div>
 
 <footer>
     <ul>
         <li>
-            <input type='button' value='Play Again' />
+            <input type='button' value='Play Again' class='play_again' />
         </li>
         <li>
-            <input type='button' value='New Game' />
+            <input type='button' value='New Game' class='new_game' />
         </li>
     </ul>
 </footer>

@@ -3,7 +3,7 @@ define(
     function () {
         'use strict';
 
-        var fixture =  {
+        var quiz =  {
             title: "IQ Tester",
             questions: [
                 {
@@ -90,6 +90,6 @@ define(
             randomized: true //If true, the questions will be displayed in random.
         };
 
-        return fixture;
+        return quiz;
     }
 );

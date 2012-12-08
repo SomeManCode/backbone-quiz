@@ -5,33 +5,42 @@ define(
         'underscore',
         'backbone',
         'State',
-        'text!templates/QuizViewTemplate.html'
+        'fixtures/quiz',
+        'collections/QuestionsCollection',
+        'views/QuestionsView'
     ],
-	function(_, Backbone, State, QuizViewTemplate){
+	function(_, Backbone, State, QuizData, QuestionsCollection, QuestionsView){
 		var QuizView = Backbone.View.extend({
+		    
 			id:"quiz_view",
 			className:"section",
-            template : QuizViewTemplate,
+			
+            questionsCollection : null,
+            questionsView : null,
 			
 			initialize:function(){
-				
+			    
 			},
 			
 			render:function(){
-				$(this.el).html(_.template(QuizViewTemplate));
+			    
+                //Create a new QuestionsCollection
+                this.questionsCollection = new QuestionsCollection();
+                //Create a new questionsView
+                this.questionsView = new QuestionsView({collection : this.questionsCollection});
+                //Set data in questionsCollection
+                this.questionsCollection.reset(QuizData.questions);
+                
+                $(this.el).html(this.questionsView.render().el);
 				return this;
 			},
-            
-            events : {
-            
-                'click .next' : "nextButtonClicked"
-            },
-            
-            nextButtonClicked : function () {
-                
-                State.router.navigate("score", {trigger : true});
-            }
-		})
+			
+			showQuestion : function(qno) {
+			    
+			    this.questionsView.showQuestion(qno);
+			    $(this.el).html(this.questionsView.el);
+			}
+		});
 		
 		return QuizView;
 	}
