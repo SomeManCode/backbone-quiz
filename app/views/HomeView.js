@@ -22,14 +22,14 @@ define(
 			},
             
             events : {
-                'click #start_game' : "startGameClicked"
+                'click .start_game' : "startGameClicked"
             },
             
             startGameClicked : function() {
                 
-                State.router.navigate("quiz", {trigger: true});
+                State.router.navigate("quiz/q1", {trigger: true});
             }
-		})
+		});
 		
 		return HomeView;
 	}
