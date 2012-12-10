@@ -1,7 +1,11 @@
 <p><%=question%></p>
+<% if(type == "radio") { %>
 <ul>
-	<li>ONe</li>
-	<li>ONe</li>
-	<li>ONe</li>
-	<li>ONe</li>
-</ul>	
+	<% _.each(answers, function(answer){ %>
+		<li><input type='radio' /> <%= answer %></li>
+	<% }); %>
+</ul>
+<% } else if (type == "fillin") { %>
+	<p><img src='<%= imageURL %>' /></p>
+	<p><input type='text' /></p>
+<% } %>

@@ -56,7 +56,7 @@ define(
                     type: "radio"
                 },
                 {
-                    question: "If you rearrange the letters ‘CIFAIPC’ you would have the name of a(n):",
+                    question: "If you rearrange the letters &lsquo;CIFAIPC&rsquo; you would have the name of a(n):",
                     answers: [
                         "city", "animal", "ocean", "river", "country"
                     ],

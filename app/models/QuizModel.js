@@ -1,14 +1,17 @@
 /* Quiz Model*/
 define(
 	['backbone'],
-	function(Backbone){
+	function (Backbone) {
+
+        'use strict';
+
 		var QuizModel = Backbone.Model.extend({
-		   defaults : {
-				time:60,
-				randomized:true
-		   }
-		   
+            defaults : {
+				time: 60,
+				randomized: true
+		    }
+
 		});
 		return QuizModel;
-	}	
+	}
 );

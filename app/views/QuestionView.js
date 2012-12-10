@@ -2,27 +2,30 @@
 
 define(
     [
+        'jquery',
         'underscore',
         'backbone',
         'text!templates/QuestionViewTemplate.html'
     ],
-    function(_, Backbone, QuestionViewTemplate){
-        
+    function ($, _, Backbone, QuestionViewTemplate) {
+
+        'use strict';
+
         var QuestionView = Backbone.View.extend({
-            
+
             template : _.template(QuestionViewTemplate),
-            
-            initialize:function(){
-            
+
+            initialize: function () {
+
             },
-            
-            render:function(){
+
+            render: function () {
                 $(this.el).html(this.template(this.model.toJSON()));
                 return this;
-            },
-            
+            }
+
         });
-        
+
         return QuestionView;
     }
 );
