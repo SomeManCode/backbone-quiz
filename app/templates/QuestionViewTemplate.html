@@ -2,11 +2,10 @@
 <% if(type == "radio") { %>
 <ul>
 	<% _.each(answers, function(answer){ %>
-		<li><%= answer %></li>
+		<li><input type='radio' /> <%= answer %></li>
 	<% }); %>
 </ul>
 <% } else if (type == "fillin") { %>
-	<img src='<%= imageURL %>' />
-	<br />
-	<input type='text' />
+	<p><img src='<%= imageURL %>' /></p>
+	<p><input type='text' /></p>
 <% } %>

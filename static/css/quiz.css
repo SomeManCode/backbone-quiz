@@ -1,0 +1,26 @@
+/* General Styles */
+ul { padding : 0 }
+li { list-style-type : none }
+
+body {
+	text-align : center;
+}
+
+header .question,
+footer .prev {
+	float : left;
+	width : 150px;
+	text-align : left;
+}
+header .weight,
+footer .pass {
+	float : right;
+	width : 150px;
+	text-align : right;
+}
+.content li {
+	width : 300px;
+	background-color : #eee;
+	padding : 5px 10px;
+	margin : 10px auto;
+}
