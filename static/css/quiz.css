@@ -2,7 +2,14 @@
 ul { padding : 0 }
 li { list-style-type : none }
 
+html{
+	height: 100%;
+	width: 100%;
+}
+
 body {
+	height: 100%;
+	width: 100%;
 	text-align : center;
 }
 
@@ -20,7 +27,6 @@ footer .pass {
 }
 .content li {
 	width : 300px;
-	background-color : #eee;
 	padding : 5px 10px;
 	margin : 10px auto;
 }

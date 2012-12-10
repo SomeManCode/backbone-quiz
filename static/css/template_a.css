@@ -1,0 +1,14 @@
+body{
+	background : url('../../screens/resources/quiz-app_bg_A.jpg') repeat;
+	color:#FFFFFF;
+}
+
+.logoHeading{
+	background-image: url("../../screens/resources/quiz-logo_A.png");
+    background-repeat: no-repeat;
+    height: 102px;
+    left: 35%;
+    position: relative;
+    text-align: center;
+    width: 402px;	
+}
