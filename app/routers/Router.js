@@ -20,11 +20,11 @@ define(
             init : function () {
                 var Router = Backbone.Router.extend({
                     routes: {
+                        ""              :   "home",
                         "home"          :   "home",
-                        "quiz"          :   "error",
                         "quiz/q:qno"    :   "quiz",
                         "score"         :   "score",
-                        "*actions"      :   "home"
+                        "*actions"      :   "error"
                     },
 
                     home: function () {
@@ -47,7 +47,7 @@ define(
                         this.quizView = null;
                     },
                     
-                    error : function() {
+                    error : function(action) {
                         $('#wrapper').html("Error");
                         this.quizView = null;
                     }

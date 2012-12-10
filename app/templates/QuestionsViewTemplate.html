@@ -1,18 +1,22 @@
 <header>
     <span class='question_status'>Question <%=current%>/<%=total%></span>
     <span class='timer'>Timer</span>
-    <span class='weight'>Weight :5</span>
+    <span class='weight'>Weight :<%=weight%></span>
 </header>
 
 <div class='content'>
 </div>
 
 <footer>
-    <a class='prev' href='#quiz/q<%=(current - 1)%>'>Prev</a>
+	<% if(current > 1) { %>
+    	<a class='prev' href='#quiz/q<%=(current - 1)%>'>Prev</a>
+   	<% } %>
+   	
     <% if(current == total) { %>
 	    <a class='next' href='#score'>Score</a>
     <% } else { %>
 	    <a class='next' href='#quiz/q<%=(current + 1)%>'>Next</a>
 	    <a class='pass' href='#quiz/q<%=(current + 1)%>'>Pass</a>
     <% } %>
+    
 </footer>

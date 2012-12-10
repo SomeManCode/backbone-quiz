@@ -25,7 +25,8 @@ define(
                     "current" : 0,
                     "total" : totalQuestions,
                     "next" : 0,
-                    "prev" : 0
+                    "prev" : 0,
+                    "weight" : 0
                 }));
                 return this;
             },
@@ -33,11 +34,14 @@ define(
             showQuestion : function(qno) {
                 qno = parseInt(qno);
                 if(qno <= totalQuestions) {
+                    //Get question model
+                    var qModel = this.collection.at(qno - 1);
                     //Create new QuestionView with the question model
-                    var questionView = new QuestionView({model : this.collection.at(qno - 1)});
+                    var questionView = new QuestionView({model : qModel});
                     $(this.el).html(this.template({
                         "current" : qno,
-                        "total" : totalQuestions
+                        "total" : totalQuestions,
+                        "weight" : qModel.get('weight')
                     }));
                     $(this.el).find('.content').html(questionView.render().el);
                 } else {
