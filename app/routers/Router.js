@@ -11,7 +11,7 @@ define(
         'use strict';
 
         var Router = function () {
-            
+
         };
 
         Router.prototype = {
@@ -33,8 +33,8 @@ define(
 						this.quizView = null;
                     },
 
-                    quiz : function(qno) {
-                        if(this.quizView == null) {
+                    quiz : function (qno) {
+                        if (this.quizView === null) {
                             this.quizView = new QuizView();
                             $("#wrapper").html(this.quizView.render().el);
                         }
@@ -46,8 +46,8 @@ define(
                         $('#wrapper').html(scoreView.render().el);
                         this.quizView = null;
                     },
-                    
-                    error : function(action) {
+
+                    error : function () {
                         $('#wrapper').html("Error");
                         this.quizView = null;
                     }

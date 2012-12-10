@@ -3,7 +3,8 @@
 describe('JSLint', function () {
     'use strict';
     var options = {
-        predef: ['requirejs', 'define']
+        predef: ['requirejs', 'define'],
+        nomen : true
     };
     function get(path) {
         path = path + "?" + new Date().getTime();
