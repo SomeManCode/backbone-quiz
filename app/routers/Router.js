@@ -16,9 +16,9 @@ define(
 
         Router.prototype = {
             router : null,
-            quizView : null,
             init : function () {
                 var Router = Backbone.Router.extend({
+					quizView : null,
                     routes: {
                         ""              :   "home",
                         "home"          :   "home",
