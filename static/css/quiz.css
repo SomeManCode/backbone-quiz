@@ -13,9 +13,13 @@ p{
 }
 
 html{
+        height:100%;
+	width:100%;
 }
 
 body {
+        height:100%;
+	width:100%;
 	text-align : center;
 }
 
@@ -68,12 +72,12 @@ input[type=text]  {
     
 }
 .content {
-        margin-top: 7em;
+/*        margin-top: 7em;*/
 }
 footer {
-        margin-top: 7em;
-	padding : 0.3em 0.6em;
-	margin : 0.6em auto;
+/*        margin-top: 7em;*/
+	padding : 0 0.6em;
+	margin : 0 auto;
 	text-align:center;
 }
 
@@ -83,8 +87,8 @@ footer {
 }
 .section{
 	height: 90%;
-	padding-bottom: 0px;
-	padding-top: 40px;
+	padding-bottom: 0;
+	padding-top: 5em;
 	width: 100%;
 }
 #wrapper{
@@ -106,19 +110,19 @@ footer {
 }
 
 .footer{
-	height:10%;
 	width:100%;
 }
 
 .headerSpanContainer{
 	background-color: #0F0F0F;
-	height: 1.5em;
+	height: 25%;
 	padding: 0.6em;
 	position: relative;
+	top:20%;
 }
 
 span.question, span.weight{
-	color:#098999;
+	color:#00deff;
 }
 
 div.timer
@@ -141,4 +145,14 @@ div.timer
 	background-color:#545454;
 	padding:10px 40px;
 	border-radius:10px;
+}
+#question_view {
+        height:98%;
+}
+#home_view .content,#score_view .content  {
+    height:56%;
+}
+.scoreViewHeader p {
+    color: #00deff;
+    font-size:2em;
 }

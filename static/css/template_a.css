@@ -11,6 +11,16 @@ body{
         margin:auto
 }
 
-.homeViewHeader {
-        margin-top:3.5em;
+#home_view .homeViewcontent p{
+    position:relative;
+    top:30%;
+    
+}
+
+.content #question_view ul li{
+    background-color:#3F3F3F;
+}
+
+#quiz_view.section {
+    padding-top:0;
 }
