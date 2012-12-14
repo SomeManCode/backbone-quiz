@@ -4,8 +4,13 @@
         src: url("../fonts/Cuprum.otf") format("opentype");
 
 }
-ul { padding : 0 }
+ul { padding : 0; margin : 0 }
+
 li { list-style-type : none }
+
+p{
+	margin:0;
+}
 
 html{
 }
@@ -14,14 +19,12 @@ body {
 	text-align : center;
 }
 
-header .question,
-footer .prev {
+header .question, footer .prev {
 	float : left;
 	width : 9.4em;/*150px*/
 	text-align : left;
 }
-header .weight,
-footer .pass {
+header .weight, footer .pass {
 	float : right;
 	width : 9.4em;/*150px*/
 	text-align : right;
@@ -69,4 +72,73 @@ input[type=text]  {
 }
 footer {
         margin-top: 7em;
+	padding : 0.3em 0.6em;
+	margin : 0.6em auto;
+	text-align:center;
+}
+
+.content li:hover{
+	cursor:pointer;
+	background-color:#8F8F8F;
+}
+.section{
+	height: 90%;
+	padding-bottom: 0px;
+	padding-top: 40px;
+	width: 100%;
+}
+#wrapper{
+        margin: auto;
+	padding: 0;
+	position: relative;
+	width: 80%;
+	height:100%;
+}
+
+.header{
+	height:20%;
+	width:100%;
+}
+
+.content{
+	height:70%;
+	width:100%;
+}
+
+.footer{
+	height:10%;
+	width:100%;
+}
+
+.headerSpanContainer{
+	background-color: #0F0F0F;
+	height: 1.5em;
+	padding: 0.6em;
+	position: relative;
+}
+
+span.question, span.weight{
+	color:#098999;
+}
+
+div.timer
+{
+	background-image: url("../../screens/resources/timer_start.png");
+	height: 114px;
+	left: 45%;
+	position: absolute;
+	top: -100px;
+	width: 104px;
+}
+
+.footerAnc{
+	color: #9D9D9D;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.footerNextAnc{
+	background-color:#545454;
+	padding:10px 40px;
+	border-radius:10px;
 }
