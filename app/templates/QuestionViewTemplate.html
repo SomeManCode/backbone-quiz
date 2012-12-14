@@ -2,7 +2,7 @@
 <% if(type == "radio") { %>
 <ul>
 	<% _.each(answers, function(answer){ %>
-		<li class="answer"> <%= answer %></li>
+		<li><input type='radio' /> <%= answer %></li>
 	<% }); %>
 </ul>
 <% } else if (type == "fillin") { %>
