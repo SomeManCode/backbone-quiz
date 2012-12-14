@@ -166,3 +166,8 @@ div.timer
 	height:15em;
 	margin: 0 auto;
 }
+
+BG:                              #000000     (opacity 35%)     (white drop shadow)
+Congratulations :         #ffffff       georgia (italic)
+Total Score :                #ffffff       georgia (italic)      (white drop shadow)
+Question Score :          #ffffff       georgia (regular)      (black drop shadow)
