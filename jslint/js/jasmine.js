@@ -3,7 +3,7 @@
 describe('JSLint', function () {
     'use strict';
     var options = {
-        predef: ['requirejs', 'define'],
+        predef: ['requirejs', 'define', 'requirejsConfig', 'describe', 'jasmine', 'window', 'beforeEach', 'expect', 'it'],
         nomen : true
     };
     function get(path) {
