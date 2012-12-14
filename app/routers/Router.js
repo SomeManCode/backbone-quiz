@@ -4,8 +4,8 @@ define(
         'jquery',
         'backbone',
         'views/ScoreView',
-		'views/HomeView',
-		'views/QuizView'
+        'views/HomeView',
+        'views/QuizView'
     ],
     function ($, Backbone, ScoreView, HomeView, QuizView) {
         'use strict';
@@ -18,7 +18,7 @@ define(
             router : null,
             init : function () {
                 var Router = Backbone.Router.extend({
-					quizView : null,
+                    quizView : null,
                     routes: {
                         ""              :   "home",
                         "home"          :   "home",
@@ -28,9 +28,9 @@ define(
                     },
 
                     home: function () {
-						var homeView = new HomeView();
-						$("#wrapper").html(homeView.render().el);
-						this.quizView = null;
+                        var homeView = new HomeView();
+                        $("#wrapper").html(homeView.render().el);
+                        this.quizView = null;
                     },
 
                     quiz : function (qno) {
