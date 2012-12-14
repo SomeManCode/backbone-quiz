@@ -156,3 +156,18 @@ div.timer
     color: #00deff;
     font-size:2em;
 }
+.total_score {
+    background: rgba(0, 0, 0, 0.35);
+            -webkit-box-shadow: 0px 0px 4px white; /* Safari/Chrome, other WebKit */
+        -moz-box-shadow: 0px 0px 4px white;    /* Firefox, other Gecko */
+        box-shadow: 0px 0px 4px white;         /* Opera/IE 8+ */
+	text-shadow:2px 2px black;
+	width:30em;
+	height:15em;
+	margin: 0 auto;
+}
+
+BG:                              #000000     (opacity 35%)     (white drop shadow)
+Congratulations :         #ffffff       georgia (italic)
+Total Score :                #ffffff       georgia (italic)      (white drop shadow)
+Question Score :          #ffffff       georgia (regular)      (black drop shadow)
