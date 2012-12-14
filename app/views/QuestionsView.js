@@ -13,6 +13,8 @@ define(
         'use strict';
 
         var QuestionsView = Backbone.View.extend({
+			id : "questions_view",
+            className : "section",
             totalQuestions : null,
             template : _.template(QuestionsViewTemplate),
 

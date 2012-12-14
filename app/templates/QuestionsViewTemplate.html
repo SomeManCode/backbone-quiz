@@ -1,32 +1,34 @@
-<header class="questionsViewHeader">
+<header class="header questionsViewHeader">
+	<div class="headerSpanContainer">
     <span class='question'>Question <%=current%>/<%=total%></span>
-    <span class='timer'>Timer</span>
+    <div class='timer'></div>
     <span class='weight'>Weight :<%=weight%></span>
+	</div>
 </header>
 
-<div class='content'>
+<div class='content questionsViewContent'>
 </div>
 
-<footer>
+<footer class='footer questionsViewFooter'>
 	<span class='prev'>
 		<% if(current > 1) { %>
-	    	<a href='#quiz/q<%=(current - 1)%>'>Prev</a>
+	    	<a class='footerAnc' href='#quiz/q<%=(current - 1)%>'>< &nbsp Prev</a>
 	   	<% } %>
 	   	&nbsp;
    	</span>
    	
    	<span class='next'>
 	    <% if(current < total) { %>
-		    <a href='#quiz/q<%=(current + 1)%>'>Next</a>
+		    <a class='footerAnc footerNextAnc' href='#quiz/q<%=(current + 1)%>'>Next</a>
 	    <% } else { %>
-		    <a href='#score'>Score</a>
+		    <a class='footerAnc' href='#score'>Score</a>
 	    <% } %>
    	</span>
    	
    	<span class='pass'>
 	   	&nbsp;
 		<% if(current < total) { %>
-		    <a href='#quiz/q<%=(current + 1)%>'>Pass</a>
+		    <a class='footerAnc' href='#quiz/q<%=(current + 1)%>'>Pass &nbsp ></a>
 	   	<% } %>
    	</span>
 </footer>
