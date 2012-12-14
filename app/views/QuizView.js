@@ -39,8 +39,8 @@ define(
 
 			showQuestion : function (qno) {
 
-			    this.questionsView.showQuestion(qno);
-			    $(this.el).html(this.questionsView.el);
+                this.questionsView.showQuestion(qno);
+                $(this.el).html(this.questionsView.el);
 			}
 		});
 

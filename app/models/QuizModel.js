@@ -5,11 +5,11 @@ define(
 
         'use strict';
 
-		var QuizModel = Backbone.Model.extend({
+        var QuizModel = Backbone.Model.extend({
             defaults : {
 				time: 60,
 				randomized: true
-		    }
+            }
 
 		});
 		return QuizModel;
