@@ -27,13 +27,33 @@ define(
             },
 
             events : {
-                'click .start_game' : "startGameClicked"
+                'click .start_game' : "startGameClicked",
+                'keyup .user_name'  : "validateUserName"
             },
 
             startGameClicked : function () {
+                if (!$(this.el).find('.start_game').hasClass('disabled'))
+                  State.router.navigate("quiz/q1", {trigger: true});
+            },
 
-                State.router.navigate("quiz/q1", {trigger: true});
+            validateUserName : function() {
+                if ($(this.el).find('input#user_name').val() !== "") {
+                    this.enableGame();
+                }
+                else {
+                    this.disableGame();
+                }
+            },
+
+            enableGame: function() {
+                $(this.el).find('.start_game').removeClass('disabled');
+            },
+
+            disableGame: function() {
+                $(this.el).find('.start_game').addClass('disabled');  
             }
+
+
         });
 
         return HomeView;

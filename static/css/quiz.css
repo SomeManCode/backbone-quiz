@@ -51,6 +51,12 @@ input[type=button] {
         height: 2.1em;
         width: 13em;
 }
+.start_game.disabled {
+		background: -moz-linear-gradient(top , #999999, #555555);
+        background: -webkit-linear-gradient(top , #999999, #555555);
+        border-color: black;
+        color:black;
+}
 input[type=text]  {
         color: #ffffff;
         border: 2px solid black;
@@ -167,7 +173,3 @@ div.timer
 	margin: 0 auto;
 }
 
-BG:                              #000000     (opacity 35%)     (white drop shadow)
-Congratulations :         #ffffff       georgia (italic)
-Total Score :                #ffffff       georgia (italic)      (white drop shadow)
-Question Score :          #ffffff       georgia (regular)      (black drop shadow)
