@@ -46,6 +46,6 @@ define(
             }
         });
 
-    return Router;
+        return Router;
     }
 );

@@ -30,7 +30,7 @@ define(
                 this.goTo("quiz/q1");
             },
             newGameClicked : function () {
-                this.goTo("home");  
+                this.goTo("home");
             }
         });
 

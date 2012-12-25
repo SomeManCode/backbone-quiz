@@ -31,25 +31,25 @@ define(
             },
 
             startGameClicked : function () {
-                if (!$(this.el).find('.start_game').hasClass('disabled'))
-                this.goTo("quiz/q1");
+                if (!$(this.el).find('.start_game').hasClass('disabled')) {
+                    this.goTo("quiz/q1");
+                }
             },
 
-            validateUserName : function() {
+            validateUserName : function () {
                 if ($(this.el).find('input#user_name').val() !== "") {
                     this.enableGame();
-                }
-                else {
+                } else {
                     this.disableGame();
                 }
             },
 
-            enableGame: function() {
+            enableGame : function () {
                 $(this.el).find('.start_game').removeClass('disabled');
             },
 
-            disableGame: function() {
-                $(this.el).find('.start_game').addClass('disabled');  
+            disableGame : function () {
+                $(this.el).find('.start_game').addClass('disabled');
             }
 
 
