@@ -5,10 +5,9 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'State',
         'text!templates/HomeViewTemplate.html'
     ],
-    function ($, _, Backbone, State, HomeViewTemplate) {
+    function ($, _, Backbone, HomeViewTemplate) {
 
         'use strict';
 
@@ -33,7 +32,7 @@ define(
 
             startGameClicked : function () {
                 if (!$(this.el).find('.start_game').hasClass('disabled'))
-                  State.router.navigate("quiz/q1", {trigger: true});
+                this.goTo("quiz/q1");
             },
 
             validateUserName : function() {

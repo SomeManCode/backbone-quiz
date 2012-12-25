@@ -4,11 +4,10 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'State',
         'fixtures/score',
         'text!templates/ScoreViewTemplate.html'
     ],
-    function ($, _, Backbone, State, ScoreData, ScoreViewTemplate) {
+    function ($, _, Backbone, ScoreData, ScoreViewTemplate) {
 
         'use strict';
 
@@ -28,10 +27,10 @@ define(
                 "click .new_game" : "newGameClicked"
             },
             playAgainClicked : function () {
-                State.router.navigate("quiz/q1", {trigger: true});
+                this.goTo("quiz/q1");
             },
             newGameClicked : function () {
-                State.router.navigate("home", {trigger: true});
+                this.goTo("home");  
             }
         });
 

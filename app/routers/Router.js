@@ -10,54 +10,42 @@ define(
     function ($, Backbone, ScoreView, HomeView, QuizView) {
         'use strict';
 
-        var Router = function () {
+        var Router = Backbone.Router.extend({
+            quizView : null,
+            routes: {
+                ""              :   "home",
+                "home"          :   "home",
+                "quiz/q:qno"    :   "quiz",
+                "score"         :   "score",
+                "*actions"      :   "error"
+            },
 
-        };
+            home: function () {
+                var homeView = new HomeView();
+                $("#wrapper").html(homeView.render().el);
+                this.quizView = null;
+            },
 
-        Router.prototype = {
-            router : null,
-            init : function () {
-                var Router = Backbone.Router.extend({
-                    quizView : null,
-                    routes: {
-                        ""              :   "home",
-                        "home"          :   "home",
-                        "quiz/q:qno"    :   "quiz",
-                        "score"         :   "score",
-                        "*actions"      :   "error"
-                    },
+            quiz : function (qno) {
+                if (this.quizView === null) {
+                    this.quizView = new QuizView();
+                    $("#wrapper").html(this.quizView.render().el);
+                }
+                this.quizView.showQuestion(qno);
+            },
 
-                    home: function () {
-                        var homeView = new HomeView();
-                        $("#wrapper").html(homeView.render().el);
-                        this.quizView = null;
-                    },
+            score : function () {
+                var scoreView = new ScoreView();
+                $('#wrapper').html(scoreView.render().el);
+                this.quizView = null;
+            },
 
-                    quiz : function (qno) {
-                        if (this.quizView === null) {
-                            this.quizView = new QuizView();
-                            $("#wrapper").html(this.quizView.render().el);
-                        }
-                        this.quizView.showQuestion(qno);
-                    },
-
-                    score : function () {
-                        var scoreView = new ScoreView();
-                        $('#wrapper').html(scoreView.render().el);
-                        this.quizView = null;
-                    },
-
-                    error : function () {
-                        $('#wrapper').html("Error");
-                        this.quizView = null;
-                    }
-                });
-
-                this.router = new Router();
-                Backbone.history.start();
+            error : function () {
+                $('#wrapper').html("Error");
+                this.quizView = null;
             }
-        };
+        });
 
-        return Router;
+    return Router;
     }
 );
