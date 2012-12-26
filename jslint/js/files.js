@@ -11,7 +11,6 @@ var files_list =
         '../../app/models/ScoreModel.js',
         '../../app/requirejs-config.js',
         '../../app/routers/Router.js',
-        '../../app/State.js',
         '../../app/test-main.js',
         '../../app/views/HomeView.js',
         '../../app/views/QuestionsView.js',
