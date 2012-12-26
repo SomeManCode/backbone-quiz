@@ -46,14 +46,15 @@ define(
                 return this;
             },
             showQuestion : function (qno) {
-                qno = parseInt(qno, 10);
-                if (qno <= this.totalQuestions) {
+                var self = this, qModel = null, questionView = null;
+                self.qno = parseInt(qno, 10);
+                if (self.qno <= this.totalQuestions) {
                         //Get question model
-                    var qModel = this.collection.at(qno - 1),
-                        //Create new QuestionView with the question model
-                        questionView = new QuestionView({model : qModel});
+                    qModel = this.collection.at(self.qno - 1);
+                    //Create new QuestionView with the question model
+                    questionView = new QuestionView({model : qModel});
                     $(this.el).html(this.template({
-                        "current" : qno,
+                        "current" : self.qno,
                         "total" : this.totalQuestions,
                         "weight" : qModel.get('weight')
                     }));
@@ -86,7 +87,13 @@ define(
                 self.angle += angleplus;
                 self.timeIteration += 1;
                 if (self.timeIteration === self.timeLimit) {
+                    //$(this.el).find("span.next a").trigger("click");
                     self.resetClock();
+                    if (self.qno === self.totalQuestions) {
+                        self.goTo("score");
+                    } else {
+                        self.goTo("quiz/q" + (self.qno + 1));
+                    }
                 }
             },
             drawSector : function (cx, cy, r, startAngle, endAngle, params) {

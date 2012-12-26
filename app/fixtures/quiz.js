@@ -86,7 +86,7 @@ define(
                     type: "fillin"
                 }
             ],
-            time: 120, //If null, its not a timer base quiz. Value will be in seconds
+            time: 5, //If null, its not a timer base quiz. Value will be in seconds
             randomized: true //If true, the questions will be displayed in random.
         };
 

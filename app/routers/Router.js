@@ -36,6 +36,7 @@ define(
 
             score : function () {
                 var scoreView = new ScoreView();
+                this.quizView.questionsView.resetClock();
                 $('#wrapper').html(scoreView.render().el);
                 this.quizView = null;
             },
