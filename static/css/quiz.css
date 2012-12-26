@@ -178,3 +178,15 @@ div.analogTimer
 	margin: 0 auto;
 }
 
+.content #question_view ul li{
+    background-color:rgba(255, 255, 255, 0.15);
+}
+.content #question_view ul li.answer:hover {
+    background-color:rgba(255, 255, 255, 0.25);
+}
+
+.content #question_view ul li.answer.active, .content #question_view ul li.answer.active:hover{
+    background-color:rgba(255, 255, 255, 0.35);
+    background-image: url("../../screens/resources/tick.png");
+    background-repeat: no-repeat;
+}
