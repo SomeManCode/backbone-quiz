@@ -37,7 +37,8 @@ define(
             },
 
             validateUserName : function () {
-                if ($(this.el).find('input#user_name').val() !== "") {
+                var name = $(this.el).find('input#user_name').val();
+                if (name !== "" && name.length > 3) {
                     this.enableGame();
                 } else {
                     this.disableGame();

@@ -18,7 +18,10 @@ body{
 }
 
 .content #question_view ul li{
-    background-color:#3F3F3F;
+    background-color:rgba(255, 255, 255, 0.15);
+}
+.content #question_view ul li.answer:hover{
+    background-color:rgba(255, 255, 255, 0.25);;
 }
 
 #quiz_view.section {
