@@ -21,7 +21,7 @@ define(
             paper : null,
             timeInterval : null,
             cx : 50,
-            cy : 63,
+            cy : 62,
             angle : -90,
             r : 37,
             rad : Math.PI / 180,
@@ -67,11 +67,12 @@ define(
                 timerElmt.empty().html(mins + " : " + secs);
             },
             initializeAnalogTimer : function () {
-                var self = this, clock = this.paper.circle(self.cx, self.cy, self.r), clockRef = null;
+                var self = this, clock = null, clockRef = null;
                 if (this.paper) {
                     self.resetClock();
                 }
                 this.paper = Raphael($(this.el).find("div.analogTimer")[0], 100, 100);
+                clock = this.paper.circle(self.cx, self.cy, self.r);
                 clock.attr({"fill": "#000000", "stroke": "#DADADA", "stroke-width": "2"});
                 clockRef = function () {
                     self.update_clock();

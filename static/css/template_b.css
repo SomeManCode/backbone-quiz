@@ -1,10 +1,10 @@
 body{
-	background : url('../../screens/resources/quiz-app_bg_A.jpg') repeat;
+	background : url('../../screens/resources/quiz-app_bg_B.jpg') repeat;
 	color:#FFFFFF;
 }
 
 .logoHeading{
-        background-image: url("../../screens/resources/quiz-logo_A.png");
+        background-image: url("../../screens/resources/quiz-logo_B.png");
         background-repeat: no-repeat;
         height: 6.375em;
         width: 25.175em;	
@@ -17,15 +17,15 @@ body{
     
 }
 
+span.question, span.weight{
+	color:#A32B13;
+}
+
 .content #question_view ul li{
     background-color:rgba(255, 255, 255, 0.15);
 }
 .content #question_view ul li.answer:hover{
     background-color:rgba(255, 255, 255, 0.25);;
-}
-
-span.question, span.weight{
-	color:#00deff;
 }
 
 #quiz_view.section {
