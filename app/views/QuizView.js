@@ -46,7 +46,7 @@ define(
                 'keyup input.answer' : "answerSelected"
             },
 
-            answerSelected : function () {
+            answerSelected : function (event) {
                 var responseEle = $(event.target);
                 if (responseEle.get(0).tagName === "LI") {
                     if (!responseEle.hasClass('active')) {
