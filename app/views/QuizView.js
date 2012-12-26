@@ -41,9 +41,42 @@ define(
                 return this;
             },
 
+            events : {
+                'click li.answer' : "answerSelected",
+                'keyup input.answer' : "answerSelected"
+            },
+
+            answerSelected : function () {
+                var responseEle = $(event.target);
+                if (responseEle.get(0).tagName === "LI") {
+                    if (!responseEle.hasClass('active')) {
+                        responseEle.addClass('active');
+                        responseEle.siblings().removeClass('active');
+                        this.response = responseEle.text();
+                        //this.activateNext();
+                    }
+                }// else if (responseEle.get(0).tagName === "INPUT") {
+                    //if (responseEle.val().length > 0) {
+                        //this.activateNext();
+                    //} else {
+                        //this.deactivateNext();
+                    //}
+                //}
+            },
+
             showQuestion : function (qno) {
+                this.currentIndex = qno;
                 this.questionsView.showQuestion(qno);
                 $(this.el).html(this.questionsView.el);
+            },
+            activateNext: function () {
+
+            },
+            deactivateNext: function () {
+
+            },
+            next: function () {
+
             }
         });
 
