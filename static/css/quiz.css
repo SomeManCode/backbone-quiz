@@ -136,13 +136,17 @@ span.question, span.weight{
 	color:#00deff;
 }
 
-div.timer
-{
-	background-image: url("../../screens/resources/timer_start.png");
-	height: 114px;
+div.timer{
+	height: 145px;
 	left: 45%;
 	position: absolute;
 	top: -100px;
+	width: 104px;
+}
+div.analogTimer
+{
+	background-image: url("../../screens/resources/timer_start.png");
+	height: 114px;
 	width: 104px;
 }
 
