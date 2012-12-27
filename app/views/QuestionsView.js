@@ -89,11 +89,7 @@ define(
                 if (self.timeIteration === self.timeLimit) {
                     //$(this.el).find("span.next a").trigger("click");
                     self.resetClock();
-                    if (self.qno === self.totalQuestions) {
-                        self.goTo("score");
-                    } else {
-                        self.goTo("quiz/q" + (self.qno + 1));
-                    }
+                    self.goTo("quiz/q" + (self.qno + 1));
                 }
             },
             drawSector : function (cx, cy, r, startAngle, endAngle, params) {

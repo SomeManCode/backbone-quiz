@@ -35,7 +35,10 @@ define(
             },
 
             score : function () {
-                var scoreView = new ScoreView();
+                var scoreView = new ScoreView({
+                    "responses" : this.quizView.responses,
+                    "questionModels" : this.quizView.questionsCollection.models
+                });
                 this.quizView.questionsView.resetClock();
                 $('#wrapper').html(scoreView.render().el);
                 this.quizView = null;
