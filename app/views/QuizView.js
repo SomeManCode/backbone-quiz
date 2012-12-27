@@ -35,8 +35,11 @@ define(
                 //Create a new questionsView
                 this.questionsView = new QuestionsView({collection : this.questionsCollection, model : this.model});
                 //Set data in questionsCollection
-                this.questionsCollection.reset(QuizData.questions);
-
+                if (this.model.get('randomized')) {
+                    this.questionsCollection.reset(_.shuffle(QuizData.questions));
+                } else {
+                    this.questionsCollection.reset(QuizData.questions);
+                }
                 $(this.el).html(this.questionsView.render().el);
                 return this;
             },
