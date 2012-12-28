@@ -32,7 +32,8 @@ define(
                 'click .start_game' : "startGameClicked",
                 'keyup .user_name'  : "validateUserName",
                 'click .templateDiv' : "templateDivClicked",
-                'change .languagesSelect' : 'languageChange'
+                'change .languagesSelect' : 'languageChange',
+                'click .help'       : "helpClicked"
             },
 
             startGameClicked : function () {
@@ -67,6 +68,9 @@ define(
 
             disableGame : function () {
                 $(this.el).find('.start_game').addClass('disabled');
+            },
+            helpClicked: function () {
+                this.goTo("help");
             }
 
 
