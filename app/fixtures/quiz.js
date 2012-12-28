@@ -102,11 +102,11 @@ define(
                     question: "Who is the famous personality?",
                     imageURL: "http://ia.media-imdb.com/images/M/MV5BMTIwMzAwMzg1MV5BMl5BanBnXkFtZTYwMjc4ODQ2._V1._SX214_CR0,0,214,314_.jpg",
                     weight: 8,
-                    "correct_answer": "salman rushdie",
+                    "correct_answer": "stanley kubrick",
                     type: "fillin"
                 }
             ],
-            time: 20, //If null, its not a timer base quiz. Value will be in seconds
+            time: 30, //If null, its not a timer base quiz. Value will be in seconds
             randomized: true //If true, the questions will be displayed in random.
         };
 

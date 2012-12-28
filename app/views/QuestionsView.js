@@ -82,7 +82,7 @@ define(
                 self.timeInterval = setInterval(clockRef, 1000);
             },
             update_clock : function () {
-                var self = this, timeCount = Math.ceil(360 / self.model.get("time")), angleplus = 360 * timeCount / self.total;
+                var self = this, angleplus = 360 / self.model.get('time');
                 self.drawSector(self.cx, self.cy, (self.r - 1), self.angle, self.angle + angleplus, {fill: "#00DEFF", stroke: "#00DEFF", "stroke-width": 3});
                 self.angle += angleplus;
                 self.timeIteration += 1;

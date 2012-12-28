@@ -8,13 +8,9 @@ body{
         background-repeat: no-repeat;
         height: 6.375em;
         width: 25.175em;	
-        margin:auto
-}
-
-#home_view .homeViewcontent p{
-    position:relative;
-    top:30%;
-    
+        margin:auto;
+        margin-top: 3em;
+        display: inline-block;
 }
 
 span.question, span.weight{
@@ -23,4 +19,7 @@ span.question, span.weight{
 
 #quiz_view.section {
     padding-top:0;
+}
+#scoreView section .correct_questions {
+    color: #00deff;
 }

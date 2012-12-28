@@ -35,12 +35,22 @@ define(
             },
 
             score : function () {
-                var scoreView = new ScoreView({
-                    "responses" : this.quizView.responses,
-                    "questionModels" : this.quizView.questionsCollection.models
-                });
-                this.quizView.questionsView.resetClock();
-                $('#wrapper').html(scoreView.render().el);
+                var scoreView;
+                if (this.quizView !== null) {
+                    scoreView = new ScoreView({
+                        "responses" : this.quizView.responses,
+                        "questionModels" : this.quizView.questionsCollection.models
+                    });
+                    this.quizView.questionsView.resetClock();
+                    $('#wrapper').html(scoreView.render().el);
+                }
+                else {
+                    scoreView = new ScoreView({
+                        "responses" : [],
+                        "questionModels" : []
+                    });
+                    $('#wrapper').html(scoreView.render().el);
+                }
                 this.quizView = null;
             },
 
