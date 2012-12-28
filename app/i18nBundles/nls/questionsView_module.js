@@ -5,7 +5,8 @@ define({
 		"Next" : "Next",
 		"Prev" : "Prev",
 		"Pass" : "Pass",
-		"Score" : "Score"
+		"Score" : "Score",
+		"Quit" : "Quit"
     },
 	"fr-fr": true
 });

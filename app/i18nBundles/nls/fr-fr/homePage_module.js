@@ -1,5 +1,5 @@
 define({
-        "EnterYourName": "asdasd asdasd dd",
-		"StartGame" : "Sart Gamee",
-		"Help" : "Heelpe"
+        "EnterYourName": "Entrez votre nom",
+		"StartGame" : "Démarrer un jeu.",
+		"Help" : "aider"
 });

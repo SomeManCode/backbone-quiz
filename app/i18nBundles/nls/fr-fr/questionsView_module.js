@@ -1,8 +1,9 @@
 define({
-		"Question": "Questionaire",
-		"Weight" : "Weighttte",
-		"Next" : "Nextttr",
-		"Prev" : "Prevttr",
-		"Pass" : "Passttr",
-		"Score" : "Sccoree"
+		"Question": "question",
+		"Weight" : "poids",
+		"Next" : "suivant",
+		"Prev" : "Précédent",
+		"Pass" : "passer",
+		"Score" : "score",
+		"Quit" : "quitter"
 });

@@ -1,15 +1,15 @@
 <header class="header scoreViewHeader">
     <div class="logoHeading"></div>
     	<p>
-		Results
+		<%=locale['Results']%>
 	</p>
 </header>
 
 <div class='content scoreViewContent'>
     <p>
-        Congratulations!
+        <%=locale['Congratulations']%>!
         <div class="total_score" >
-    	  Score : <%=score %>/<%=total_score%>	
+    	  <%=locale['Score']%> : <%=score %>/<%=total_score%>	
 		</div>
     </p>
 </div>
@@ -19,10 +19,10 @@
 <footer class='footer scoreViewFooter'>
     <ul>
         <li>
-            <input type='button' value='Play Again' class='play_again' />
+            <input type='button' value='<%=locale['PlayAgain']%>' class='play_again' />
         </li>
         <li>
-            <input type='button' value='New Game' class='new_game' />
+            <input type='button' value='<%=locale['NewGame']%>' class='new_game' />
         </li>
     </ul>
 </footer>
