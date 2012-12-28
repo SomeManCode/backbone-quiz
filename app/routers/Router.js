@@ -43,8 +43,7 @@ define(
                     });
                     this.quizView.questionsView.resetClock();
                     $('#wrapper').html(scoreView.render().el);
-                }
-                else {
+                } else {
                     scoreView = new ScoreView({
                         "responses" : [],
                         "questionModels" : []

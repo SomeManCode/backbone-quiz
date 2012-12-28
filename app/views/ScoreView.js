@@ -18,7 +18,8 @@ define(
             initialize : function (options) {
                 this.model = new ScoreModel({
                     "responses" : options.responses,
-                    "questions": options.questionModels});
+                    "questions": options.questionModels
+                });
             },
             render : function () {
                 $(this.el).html(this.template(this.model.toJSON()));

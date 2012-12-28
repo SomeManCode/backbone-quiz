@@ -70,22 +70,20 @@ define(
             },
 
             showQuestion : function (qno) {
-                if (qno > 1 && qno  <= this.questionsCollection.length+1) {
+                if (qno > 1 && qno  <= this.questionsCollection.length + 1) {
                     var response;
                     if (this.questionsCollection.at(qno - 2).get('type') === "radio") {
                         response = this.questionsView.$el.find('#question_view li.active').text().trim();
                     } else {
                         response = this.questionsView.$el.find('#question_view input').val();
-                        
                     }
                     if (response === "") {
                         response = undefined;
                     }
-                this.responses.push({"id": this.questionsCollection.at(qno - 2).get('id'), "response" : response});
-                }    
-                
+                    this.responses.push({"id": this.questionsCollection.at(qno - 2).get('id'), "response" : response});
+                }
                 if (qno > 0 && qno <= this.questionsCollection.length) {
-                    this.currentIndex = qno;  
+                    this.currentIndex = qno;
                     this.questionsView.showQuestion(qno);
                     $(this.el).html(this.questionsView.el);
                 } else {
