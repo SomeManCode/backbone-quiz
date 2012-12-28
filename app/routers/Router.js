@@ -5,9 +5,10 @@ define(
         'backbone',
         'views/ScoreView',
         'views/HomeView',
-        'views/QuizView'
+        'views/QuizView',
+        'views/HelpView'
     ],
-    function ($, Backbone, ScoreView, HomeView, QuizView) {
+    function ($, Backbone, ScoreView, HomeView, QuizView, HelpView) {
         'use strict';
 
         var Router = Backbone.Router.extend({
@@ -17,6 +18,7 @@ define(
                 "home"          :   "home",
                 "quiz/q:qno"    :   "quiz",
                 "score"         :   "score",
+                "help"          :   "help",
                 "*actions"      :   "error"
             },
 
@@ -49,6 +51,18 @@ define(
                         "questionModels" : []
                     });
                     $('#wrapper').html(scoreView.render().el);
+                }
+                this.quizView = null;
+            },
+            help : function () {
+                var helpView;
+                if (this.quizView === null) {
+                    this.quizView = new QuizView();
+                    helpView = new HelpView({
+                        "numberOfQuestions" : this.quizView.questionsCollection.length,
+                        "duration" : this.quizView.model.get('time')
+                    });
+                    $("#wrapper").html(helpView.render().el);
                 }
                 this.quizView = null;
             },

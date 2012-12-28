@@ -29,10 +29,6 @@ define(
                     time : QuizData.time,
                     randomized : QuizData.randomized
                 });
-            },
-
-            render: function () {
-
                 //Create a new QuestionsCollection
                 this.questionsCollection = new QuestionsCollection();
                 //Create a new questionsView
@@ -43,6 +39,9 @@ define(
                 } else {
                     this.questionsCollection.reset(QuizData.questions);
                 }
+            },
+
+            render: function () {
                 $(this.el).html(this.questionsView.render().el);
                 return this;
             },
