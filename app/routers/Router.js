@@ -25,6 +25,9 @@ define(
             home: function () {
                 var homeView = new HomeView();
                 $("#wrapper").html(homeView.render().el);
+                if (this.quizView !== null) {
+                    this.quizView.questionsView.resetClock();
+                }
                 this.quizView = null;
             },
 
@@ -39,11 +42,11 @@ define(
             score : function () {
                 var scoreView;
                 if (this.quizView !== null) {
+                    this.quizView.questionsView.resetClock();
                     scoreView = new ScoreView({
                         "responses" : this.quizView.responses,
                         "questionModels" : this.quizView.questionsCollection.models
                     });
-                    this.quizView.questionsView.resetClock();
                     $('#wrapper').html(scoreView.render().el);
                 } else {
                     scoreView = new ScoreView({
@@ -63,6 +66,14 @@ define(
                         "duration" : this.quizView.model.get('time')
                     });
                     $("#wrapper").html(helpView.render().el);
+                }
+                else {
+                    helpView = new HelpView({
+                        "numberOfQuestions" : this.quizView.questionsCollection.length,
+                        "duration" : this.quizView.model.get('time')
+                    });
+                    $("#wrapper").html(helpView.render().el);
+                    this.quizView.questionsView.resetClock();
                 }
                 this.quizView = null;
             },
