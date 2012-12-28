@@ -24,13 +24,20 @@ body {
 }
 
 header .question, footer .prev {
-	float : left;
-	width : 9.4em;/*150px*/
 	text-align : left;
+	position:absolute;
+	left:0;
+}
+header .question {
+	width:7em;
+}
+footer .prev {
+	width: 4em;
 }
 header .weight, footer .pass {
-	float : right;
-	width : 9.4em;/*150px*/
+	position:absolute;
+	right:0;
+	width : 5em;/*150px*/
 	text-align : right;
 }
 .content li {
@@ -59,12 +66,11 @@ input[type=button] {
 }
 input[type=text]:focus {
 	border: 2px solid black;
-	border-radius: 30px;	
 }
 input[type=text]  {
 	color: #ffffff;
 	border: 2px solid #333333;
-	border-radius: 30px;
+	border-radius: 44px;
 	height: 3.1em;
 	width: 28.1em;
 	font-family: CuprumFFU;
@@ -90,6 +96,8 @@ footer {
 	padding : 0 0.6em;
 	margin : 0 auto;
 	text-align:center;
+	position:absolute;
+	bottom:0;
 }
 
 .content li:hover{
@@ -99,7 +107,6 @@ footer {
 .section{
 	height: 90%;
 	padding-bottom: 0;
-	padding-top: 5em;
 	width: 100%;
 }
 #wrapper{
@@ -111,13 +118,15 @@ footer {
 }
 
 .header{
-	height:20%;
+	height:34%;
 	width:100%;
 }
 
 .content{
-	height:70%;
 	width:100%;
+	margin-top:2%;
+	margin-bottom:2%;
+	font-size:22px;
 }
 
 .footer{
@@ -126,10 +135,11 @@ footer {
 
 .headerSpanContainer{
 	background-color: #0F0F0F;
-	height: 25%;
+	height: 4%;
 	padding: 0.6em;
-	position: relative;
-	top:20%;
+	position: absolute;
+	top:15%;
+	width:97.8%;
 }
 
 div.timer{
@@ -153,29 +163,42 @@ div.analogTimer
 }
 
 .footerNextAnc{
-	background-color:#545454;
+	background: -moz-linear-gradient(top , #999999, #FFFFFF);
+	background: -webkit-linear-gradient(top , #999999, #FFFFFF);
+	border: 2px solid #555555;
+	border-radius: 30px;
+	font-family: arial;
+	font-size: 30px;
+	font-weight: normal;
+	padding : 10px 126px;
+	color: #222;
+	/*background-color:#545454;
 	padding:10px 40px;
-	border-radius:10px;
+	border-radius:10px;*/
 }
 #question_view {
 	height:98%;
 }
-#home_view .content,#score_view .content  {
-	height:56%;
-}
+
 .scoreViewHeader p {
-	color: #00deff;
 	font-size:2em;
 }
-.total_score {
+.scoreViewContent {
 	background: rgba(0, 0, 0, 0.35);
-	-webkit-box-shadow: 0px 0px 4px white; /* Safari/Chrome, other WebKit */
-	-moz-box-shadow: 0px 0px 4px white;    /* Firefox, other Gecko */
-	box-shadow: 0px 0px 4px white;         /* Opera/IE 8+ */
+	-webkit-box-shadow: 0px 0px 20px rgba(255, 255, 255, .5); /* Safari/Chrome, other WebKit */
+	-moz-box-shadow: 0px 0px 20px rgba(255, 255, 255, .5);    /* Firefox, other Gecko */
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, .5);         /* Opera/IE 8+ */
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	text-shadow:2px 2px black;
-	width:30em;
-	height:15em;
-	margin: 0 auto;
+	width:16em;
+	height:7em;
+	margin: 0.2em auto;
+	background: black;
+	padding:20px;
+	font-size: 32px;
+	font-family: cursive;
+	border-radius: 2px;
 }
 
 .content #question_view ul li{
@@ -223,4 +246,20 @@ div.appSettings{
 .i18nDiv, .templatesDivContainer{
 	float: left;
 	margin: 0 5px;
+}
+
+.content #question_view input.answer {
+	margin-top:1%;
+}
+.questionsViewFooter {
+	bottom:2%;
+}
+#score_view section.more_details {
+	font-size: 30px;
+	letter-spacing: 5px;
+	font-family: georgia;
+}
+#score_view .total_score {
+	font-size: 40px;
+	text-shadow: 0px 3px 10px rgba(255, 255, 255, .8), 0px -3px 10px rgba(255, 255, 255, .8);
 }

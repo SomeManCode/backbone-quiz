@@ -4,10 +4,10 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'fixtures/score',
+        'models/ScoreModel',
         'text!templates/ScoreViewTemplate.html'
     ],
-    function ($, _, Backbone, ScoreData, ScoreViewTemplate) {
+    function ($, _, Backbone, ScoreModel, ScoreViewTemplate) {
 
         'use strict';
 
@@ -15,11 +15,14 @@ define(
             id : "score_view",
             className : "section",
             template : _.template(ScoreViewTemplate),
-            initialize : function () {
-
+            initialize : function (options) {
+                this.model = new ScoreModel({
+                    "responses" : options.responses,
+                    "questions": options.questionModels
+                });
             },
             render : function () {
-                $(this.el).html(this.template(ScoreData));
+                $(this.el).html(this.template(this.model.toJSON()));
                 return this;
             },
             events : {

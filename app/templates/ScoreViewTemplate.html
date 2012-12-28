@@ -7,15 +7,15 @@
 
 <div class='content scoreViewContent'>
     <p>
+        Congratulations!
         <div class="total_score" >
-			Congratulations
-			Score : <%=score %>
+    	  Score : <%=score %>/<%=total_score%>	
 		</div>
     </p>
-	<p>
-		<%=correct_questions %>/<%=total_questions%>
-	</p>
 </div>
+<section class="more_details">
+     <span class="correct_questions" ><%=correct_questions %></span>/<%=total_questions%>
+</section>
 <footer class='footer scoreViewFooter'>
     <ul>
         <li>

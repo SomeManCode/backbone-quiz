@@ -95,18 +95,14 @@ define(
                 self.timeInterval = setInterval(clockRef, 1000);
             },
             update_clock : function () {
-                var self = this, timeCount = Math.ceil(360 / self.model.get("time")), angleplus = 360 * timeCount / self.total;
+				var self = this, angleplus = 360 / self.model.get('time');
                 self.drawSector(self.cx, self.cy, (self.r - 1), self.angle, self.angle + angleplus);
                 self.angle += angleplus;
                 self.timeIteration += 1;
                 if (self.timeIteration === self.timeLimit) {
                     //$(this.el).find("span.next a").trigger("click");
                     self.resetClock();
-                    if (self.qno === self.totalQuestions) {
-                        self.goTo("score");
-                    } else {
-                        self.goTo("quiz/q" + (self.qno + 1));
-                    }
+                    self.goTo("quiz/q" + (self.qno + 1));
                 }
             },
             drawSector : function (cx, cy, r, startAngle, endAngle) {

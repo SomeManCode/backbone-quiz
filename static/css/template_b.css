@@ -7,32 +7,28 @@ body{
         background-image: url("../../screens/resources/quiz-logo_B.png");
         background-repeat: no-repeat;
         height: 6.375em;
-        width: 25.175em;	
-        margin:auto
-}
-
-#home_view .homeViewcontent p{
-    position:relative;
-    top:30%;
-    
+        width: 25.175em;    
+        margin:auto;
+        margin-top: 3em;
+        display: inline-block;
 }
 
 span.question, span.weight{
 	color:#A32B13;
 }
 
-.content #question_view ul li{
-    background-color:rgba(255, 255, 255, 0.15);
+#quiz_view.section {
+    padding-top:0;
 }
-.content #question_view ul li.answer:hover{
-    background-color:rgba(255, 255, 255, 0.25);;
+
+#score_view section .correct_questions {
+    color: #A32B13;
 }
 
 path{
 	fill: rgb(114, 25, 16);
 	stroke: rgb(114, 25, 16);
 }
-
-#quiz_view.section {
-    padding-top:0;
+.scoreViewHeader p {
+    color: #A32B13;
 }
