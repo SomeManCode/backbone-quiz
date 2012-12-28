@@ -28,6 +28,11 @@ span.question, span.weight{
     background-color:rgba(255, 255, 255, 0.25);;
 }
 
+path{
+	fill: rgb(114, 25, 16);
+	stroke: rgb(114, 25, 16);
+}
+
 #quiz_view.section {
     padding-top:0;
 }

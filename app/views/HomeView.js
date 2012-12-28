@@ -5,9 +5,11 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'text!templates/HomeViewTemplate.html'
+        'models/LanguageModel',
+        'text!templates/HomeViewTemplate.html',
+        "i18n!i18nBundles/nls/homePage_module"
     ],
-    function ($, _, Backbone, HomeViewTemplate) {
+    function ($, _, Backbone, LanguageModel, HomeViewTemplate, HomePageModule) {
 
         'use strict';
 
@@ -15,25 +17,39 @@ define(
             id: "home_view",
             className: "section",
             template : HomeViewTemplate,
-
+            LanguageModel : null,
             initialize: function () {
-
+                this.LanguageModel = new LanguageModel({"name": localStorage.getItem('language') || "en-us"});
             },
 
             render: function () {
-                $(this.el).html(_.template(this.template, {}));
+                var selectedStr = 'selected="selected"';
+                $(this.el).html(_.template(this.template, {"locale" : HomePageModule, "language" : this.LanguageModel.get("name"), "selectedStr": selectedStr}));
                 return this;
             },
 
             events : {
                 'click .start_game' : "startGameClicked",
-                'keyup .user_name'  : "validateUserName"
+                'keyup .user_name'  : "validateUserName",
+                'click .templateDiv' : "templateDivClicked",
+                'change .languagesSelect' : 'languageChange'
             },
 
             startGameClicked : function () {
                 if (!$(this.el).find('.start_game').hasClass('disabled')) {
                     this.goTo("quiz/q1");
                 }
+            },
+            templateDivClicked : function (evt) {
+                var targetElmt = $(evt.target);
+                $("head").find("link#template_link").attr("href", "static/css/" + targetElmt.attr("id") + ".css");
+            },
+            languageChange : function (evt) {
+                var targetElmt = $(evt.target);
+                this.LanguageModel.set("name", targetElmt.val());
+                localStorage.clear();
+                localStorage.setItem("language", this.LanguageModel.get("name"));
+                location.reload();
             },
 
             validateUserName : function () {

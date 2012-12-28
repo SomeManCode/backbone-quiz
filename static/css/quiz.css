@@ -190,3 +190,37 @@ div.analogTimer
     background-image: url("../../screens/resources/tick.png");
     background-repeat: no-repeat;
 }
+
+div.appSettings{
+    position: absolute;
+	left: 0;
+    top: 5px;
+}
+
+.templateDiv{
+	border: 1px solid #ADADAD;
+    float: left;
+    height: 10px;
+    margin: 0 2px;
+    width: 10px;
+	cursor: pointer;
+	position: relative;
+    top: 6px;
+}
+
+#template_a{
+	background-color:#1F1F1F;
+}
+
+#template_b{
+	background-color:#A54784;
+}
+
+.languagesSelect{
+	font-size: 12px;
+}
+
+.i18nDiv, .templatesDivContainer{
+	float: left;
+	margin: 0 5px;
+}

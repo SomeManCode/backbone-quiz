@@ -1,10 +1,23 @@
+<div class="appSettings">
+	<div class="i18nDiv">
+		<select class="languagesSelect">
+			<option value="en-us" <%=language == "en-us" ? selectedStr : ""%> >English</option>
+			<option value="fr-fr" <%=language == "fr-fr" ? selectedStr : ""%> >French</option>
+		</select>
+	</div>
+	<div class="templatesDivContainer">
+        <div id="template_a" class="templateDiv"></div>
+        <div id="template_b" class="templateDiv"></div>
+	</div>	
+</div>
+
 <header class="header homeViewHeader">
     <div class="logoHeading"></div>
 </header>
 
 <div class='content homeViewcontent'>
     <p>
-        <label for='user_name'>Enter your name</label><br />
+        <label for='user_name'><%=locale["EnterYourName"]%></label><br />
         <input type='text' autofocus id='user_name' class="user_name" />
     </p>
 </div>
@@ -12,10 +25,10 @@
 <footer class='footer homeViewFooter'>
     <ul>
         <li>
-            <input type='button' class='start_game  disabled' value='Start Game' />
+            <input type='button' class='start_game  disabled' value='<%=locale["StartGame"]%>' />
         </li>
         <li>
-            <input type='button' class='help' value='Help' />
+            <input type='button' class='help' value='<%=locale["Help"]%>' />
         </li>
     </ul>
 </footer>

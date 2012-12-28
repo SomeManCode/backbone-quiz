@@ -24,3 +24,8 @@ span.question, span.weight{
 #quiz_view.section {
     padding-top:0;
 }
+
+path{
+	fill: rgb(0, 222, 255);
+	stroke: rgb(0, 222, 255);
+}
