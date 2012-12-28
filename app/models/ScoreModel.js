@@ -1,7 +1,10 @@
 /* Score Model */
 define(
-    ['backbone'],
-    function (Backbone) {
+    [
+        'backbone',
+        'underscore'
+    ],
+    function (Backbone, _) {
 
         'use strict';
 

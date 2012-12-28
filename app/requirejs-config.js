@@ -20,5 +20,5 @@ var requirejsConfig = {
             exports: 'Backbone'
         }
     },
-    locale : localStorage.getItem('language') || 'en-us'
+    locale : window.localStorage.getItem('language') || 'en-us'
 };

@@ -37,7 +37,7 @@ define(
                 _.bindAll(this, 'render');
                 this.timeLimit = options.model.get("time");
                 this.collection.on('reset', this.render);
-                this.LanguageModel = new LanguageModel({"name": localStorage.getItem('language') || "en-us"});
+                this.LanguageModel = new LanguageModel({"name": window.localStorage.getItem('language') || "en-us"});
                 this.localeOptions = {
                     "locale" : QuestionsViewModule,
                     "language" : this.LanguageModel.get("name"),
@@ -85,17 +85,17 @@ define(
                 if (this.paper) {
                     self.resetClock();
                 }
-                this.paper = Raphael($(this.el).find("div.analogTimer")[0], 100, 100);
+                this.paper = new Raphael($(this.el).find("div.analogTimer")[0], 100, 100);
                 clock = this.paper.circle(self.cx, self.cy, self.r);
                 clock.attr({"fill": "#000000", "stroke": "#DADADA", "stroke-width": "2"});
                 clockRef = function () {
                     self.update_clock();
                     self.initializeDigitalTimer();
                 };
-                self.timeInterval = setInterval(clockRef, 1000);
+                self.timeInterval = window.setInterval(clockRef, 1000);
             },
             update_clock : function () {
-				var self = this, angleplus = 360 / self.model.get('time');
+                var self = this, angleplus = 360 / self.model.get('time');
                 self.drawSector(self.cx, self.cy, (self.r - 1), self.angle, self.angle + angleplus);
                 self.angle += angleplus;
                 self.timeIteration += 1;
@@ -122,7 +122,7 @@ define(
                 this.paper.remove();
                 self.timeIteration = 0;
                 self.angle = -90;
-                clearInterval(self.timeInterval);
+                window.clearInterval(self.timeInterval);
             }
         });
         return QuestionsView;

@@ -19,7 +19,7 @@ define(
             template : HomeViewTemplate,
             LanguageModel : null,
             initialize: function () {
-                this.LanguageModel = new LanguageModel({"name": localStorage.getItem('language') || "en-us"});
+                this.LanguageModel = new LanguageModel({"name": window.localStorage.getItem('language') || "en-us"});
             },
 
             render: function () {
@@ -47,9 +47,9 @@ define(
             languageChange : function (evt) {
                 var targetElmt = $(evt.target);
                 this.LanguageModel.set("name", targetElmt.val());
-                localStorage.clear();
-                localStorage.setItem("language", this.LanguageModel.get("name"));
-                location.reload();
+                window.localStorage.clear();
+                window.localStorage.setItem("language", this.LanguageModel.get("name"));
+                window.location.reload();
             },
 
             validateUserName : function () {

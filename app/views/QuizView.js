@@ -3,13 +3,14 @@
 define(
     [
         'jquery',
+        'underscore',
         'backbone',
         'fixtures/quiz',
         'collections/QuestionsCollection',
         'views/QuestionsView',
         'models/QuizModel'
     ],
-    function ($, Backbone, QuizData, QuestionsCollection, QuestionsView, QuizModel) {
+    function ($, _, Backbone, QuizData, QuestionsCollection, QuestionsView, QuizModel) {
 
         'use strict';
 
