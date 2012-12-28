@@ -28,16 +28,10 @@ header .question, footer .prev {
 	position:absolute;
 	left:0;
 }
-header .question {
-	width:7em;
-}
-footer .prev {
-	width: 4em;
-}
+
 header .weight, footer .pass {
 	position:absolute;
 	right:0;
-	width : 5em;/*150px*/
 	text-align : right;
 }
 .content li {
