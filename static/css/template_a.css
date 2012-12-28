@@ -23,3 +23,7 @@ span.question, span.weight{
 #scoreView section .correct_questions {
     color: #00deff;
 }
+
+.scoreViewHeader p {
+    color: #A32B13;
+}
