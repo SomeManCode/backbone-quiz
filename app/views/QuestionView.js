@@ -12,11 +12,11 @@ define(
         'use strict';
 
         var QuestionView = Backbone.View.extend({
-
+            id : "question_view",
             template : _.template(QuestionViewTemplate),
 
             initialize: function () {
-
+                //_.bindAll(this, "answerSelected");
             },
 
             render: function () {

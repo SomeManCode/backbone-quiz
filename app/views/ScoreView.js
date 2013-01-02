@@ -4,11 +4,12 @@ define(
         'jquery',
         'underscore',
         'backbone',
-        'State',
-        'fixtures/score',
-        'text!templates/ScoreViewTemplate.html'
+        'models/LanguageModel',
+        'models/ScoreModel',
+        'text!templates/ScoreViewTemplate.html',
+        'i18n!i18nBundles/nls/scoreView_module'
     ],
-    function ($, _, Backbone, State, ScoreData, ScoreViewTemplate) {
+    function ($, _, Backbone, LanguageModel, ScoreModel, ScoreViewTemplate, ScoreViewModule) {
 
         'use strict';
 
@@ -16,11 +17,23 @@ define(
             id : "score_view",
             className : "section",
             template : _.template(ScoreViewTemplate),
-            initialize : function () {
-
+            LanguageModel : null,
+            selectedStr : 'selected="selected"',
+            localeOptions : null,
+            initialize : function (options) {
+                this.model = new ScoreModel({
+                    "responses" : options.responses,
+                    "questions": options.questionModels
+                });
+                this.LanguageModel = new LanguageModel({"name": window.localStorage.getItem('language') || "en-us"});
+                this.localeOptions = {
+                    "locale" : ScoreViewModule,
+                    "language" : this.LanguageModel.get("name"),
+                    "selectedStr": this.selectedStr
+                };
             },
             render : function () {
-                $(this.el).html(this.template(ScoreData));
+                $(this.el).html(this.template($.extend((this.model.toJSON()), this.localeOptions)));
                 return this;
             },
             events : {
@@ -28,10 +41,10 @@ define(
                 "click .new_game" : "newGameClicked"
             },
             playAgainClicked : function () {
-                State.router.navigate("quiz/q1", {trigger: true});
+                this.goTo("quiz/q1");
             },
             newGameClicked : function () {
-                State.router.navigate("home", {trigger: true});
+                this.goTo("home");
             }
         });
 

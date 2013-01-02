@@ -1,32 +1,30 @@
-<header class="questionsViewHeader">
-    <span class='question'>Question <%=current%>/<%=total%></span>
-    <span class='timer'>Timer</span>
-    <span class='weight'>Weight :<%=weight%></span>
+<header class="header questionsViewHeader">
+	<div class="headerSpanContainer">
+    <span class='question'><%=locale["Question"]%> <%=current%>/<%=total%></span>
+    <div class='timer'><div class="analogTimer"></div><div class="digitalTimer"></div></div>
+    <span class='weight'><%=locale["Weight"]%> :<%=weight%></span>
+    </div>
 </header>
 
-<div class='content'>
+<div class='content questionsViewContent'>
 </div>
 
-<footer>
+<footer class='footer questionsViewFooter'>
 	<span class='prev'>
-		<% if(current > 1) { %>
-	    	<a href='#quiz/q<%=(current - 1)%>'>Prev</a>
-	   	<% } %>
-	   	&nbsp;
+<a class='footerAnc footerQuitAnc' href='javascript:void(0)'>< &nbsp <%=locale["Quit"]%></a>
+      &nbsp;
    	</span>
    	
    	<span class='next'>
-	    <% if(current < total) { %>
-		    <a href='#quiz/q<%=(current + 1)%>'>Next</a>
-	    <% } else { %>
-		    <a href='#score'>Score</a>
-	    <% } %>
+	    <% if(current <= total) { %>
+<a class='footerAnc footerNextAnc disabled' href='#quiz/q<%=(current + 1)%>'><%=locale["Next"]%></a>
+<% } %>
    	</span>
    	
    	<span class='pass'>
 	   	&nbsp;
-		<% if(current < total) { %>
-		    <a href='#quiz/q<%=(current + 1)%>'>Pass</a>
-	   	<% } %>
+		<% if(current <= total) { %>
+<a class='footerAnc' href='#quiz/q<%=(current + 1)%>'><%=locale["Pass"]%> &nbsp ></a>
+<% } %>
    	</span>
 </footer>

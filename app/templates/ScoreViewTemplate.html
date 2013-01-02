@@ -1,29 +1,28 @@
-<header class="scoreViewHeader">
-    <h1>Quiz</h1>
+<header class="header scoreViewHeader">
+    <div class="logoHeading"></div>
+    	<p>
+		<%=locale['Results']%>
+	</p>
 </header>
 
-<div class='content'>
-	<p>
-		Results
-	</p>
+<div class='content scoreViewContent'>
     <p>
-        <div>
-			Congratulations
-			Score : <%=score %>
+        <%=locale['Congratulations']%>!
+        <div class="total_score" >
+    	  <%=locale['Score']%> : <%=score %>/<%=total_score%>	
 		</div>
     </p>
-	<p>
-		<%=correct_questions %>/<%=total_questions%>
-	</p>
 </div>
-
-<footer>
+<section class="more_details">
+     <span class="correct_questions" ><%=correct_questions %></span>/<%=total_questions%>
+</section>
+<footer class='footer scoreViewFooter'>
     <ul>
         <li>
-            <input type='button' value='Play Again' class='play_again' />
+            <input type='button' value='<%=locale['PlayAgain']%>' class='play_again' />
         </li>
         <li>
-            <input type='button' value='New Game' class='new_game' />
+            <input type='button' value='<%=locale['NewGame']%>' class='new_game' />
         </li>
     </ul>
 </footer>

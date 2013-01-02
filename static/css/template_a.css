@@ -4,11 +4,32 @@ body{
 }
 
 .logoHeading{
-	background-image: url("../../screens/resources/quiz-logo_A.png");
-    background-repeat: no-repeat;
-    height: 102px;
-    left: 35%;
-    position: relative;
-    text-align: center;
-    width: 402px;	
+        background-image: url("../../screens/resources/quiz-logo_A.png");
+        background-repeat: no-repeat;
+        height: 6.375em;
+        width: 25.175em;	
+        margin:auto;
+        margin-top: 3em;
+        display: inline-block;
+}
+
+span.question, span.weight{
+	color:#00deff;
+}
+
+#quiz_view.section {
+    padding-top:0;
+}
+
+path{
+	fill: rgb(0, 222, 255);
+	stroke: rgb(0, 222, 255);
+}
+
+#scoreView section .correct_questions {
+    color: #00deff;
+}
+
+.scoreViewHeader p {
+    color: #00deff;
 }

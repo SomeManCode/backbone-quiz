@@ -1,0 +1,34 @@
+body{
+	background : url('../../screens/resources/quiz-app_bg_B.jpg') repeat;
+	color:#FFFFFF;
+}
+
+.logoHeading{
+        background-image: url("../../screens/resources/quiz-logo_B.png");
+        background-repeat: no-repeat;
+        height: 6.375em;
+        width: 25.175em;    
+        margin:auto;
+        margin-top: 3em;
+        display: inline-block;
+}
+
+span.question, span.weight{
+	color:#A32B13;
+}
+
+#quiz_view.section {
+    padding-top:0;
+}
+
+#score_view section .correct_questions {
+    color: #A32B13;
+}
+
+path{
+	fill: rgb(114, 25, 16);
+	stroke: rgb(114, 25, 16);
+}
+.scoreViewHeader p {
+    color: #A32B13;
+}
