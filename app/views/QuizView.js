@@ -49,7 +49,8 @@ define(
             events : {
                 'click li.answer' : "answerSelected",
                 'keyup input.answer' : "answerSelected",
-                'click a.footerQuitAnc' : "quit"
+                'click a.footerQuitAnc' : "quit",
+                'click a.footerNextAnc' : "next"
             },
 
             answerSelected : function (event) {
@@ -58,49 +59,51 @@ define(
                     if (!responseEle.hasClass('active')) {
                         responseEle.addClass('active');
                         responseEle.siblings().removeClass('active');
-                        //this.activateNext();
+                        this.activateNext();
                     }
-                } //else if (responseEle.get(0).tagName === "INPUT") {
-                    //if (responseEle.val().length > 0) {
-                        //this.activateNext();
-                    //} else {
-                        //this.deactivateNext();
-                    //}
-                //}
-            },
-
-            showQuestion : function (qno) {
-                if (qno > 1 && qno  <= this.questionsCollection.length + 1) {
-                    var response;
-                    if (this.questionsCollection.at(qno - 2).get('type') === "radio") {
-                        response = this.questionsView.$el.find('#question_view li.active').text().trim();
+                } else if (responseEle.get(0).tagName === "INPUT") {
+                    if (responseEle.val().length > 0) {
+                        this.activateNext();
                     } else {
-                        response = this.questionsView.$el.find('#question_view input').val();
+                        this.deactivateNext();
                     }
-                    if (response === "") {
-                        response = undefined;
-                    }
-                    this.responses.push({"id": this.questionsCollection.at(qno - 2).get('id'), "response" : response});
                 }
-                if (qno > 0 && qno <= this.questionsCollection.length) {
-                    this.currentIndex = qno;
-                    this.questionsView.showQuestion(qno);
-                    $(this.el).html(this.questionsView.el);
-                } else {
-                    this.goTo('score');
+            },
+            showQuestion : function (qno) {
+                if (this.responses[qno - 1] === undefined) {
+                    if (qno > 1 && qno  <= this.questionsCollection.length + 1) {
+                        var response;
+                        if (this.questionsCollection.at(qno - 2).get('type') === "radio") {
+                            response = this.questionsView.$el.find('#question_view li.active').text().trim();
+                        } else {
+                            response = this.questionsView.$el.find('#question_view input').val();
+                        }
+                        if (response === "") {
+                            response = undefined;
+                        }
+                        this.responses.push({"id": this.questionsCollection.at(qno - 2).get('id'), "response" : response});
+                    }
+                    if (qno > 0 && qno <= this.questionsCollection.length) {
+                        this.currentIndex = qno;
+                        this.questionsView.showQuestion(qno);
+                        $(this.el).html(this.questionsView.el);
+                    } else {
+                        this.goTo('score');
+                    }
                 }
             },
             activateNext: function () {
-
+                this.questionsView.$el.find('.footerNextAnc:first').removeClass('disabled');
             },
             deactivateNext: function () {
-
+                this.questionsView.$el.find('.footerNextAnc:first').addClass('disabled');
             },
-            next: function () {
-
+            next: function (event) {
+                if (this.questionsView.$el.find('.footerNextAnc:first').hasClass('disabled')) {
+                    event.preventDefault();
+                }
             },
             quit: function (event) {
-                //event.stopPropagation();
                 this.questionsView.resetClock();
                 this.goTo('home');
             }

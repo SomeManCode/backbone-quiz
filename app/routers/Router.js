@@ -66,8 +66,7 @@ define(
                         "duration" : this.quizView.model.get('time')
                     });
                     $("#wrapper").html(helpView.render().el);
-                }
-                else {
+                } else {
                     helpView = new HelpView({
                         "numberOfQuestions" : this.quizView.questionsCollection.length,
                         "duration" : this.quizView.model.get('time')
