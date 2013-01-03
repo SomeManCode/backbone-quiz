@@ -1,3 +1,3 @@
 define({
-        "Back": "arrière"	
+    "Back": "arrière"
 });

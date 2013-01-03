@@ -2,7 +2,7 @@
 define(
     [
         'backbone',
-		'localStorage'
+        'localStorage'
     ],
     function (Backbone, LocalStorage) {
 

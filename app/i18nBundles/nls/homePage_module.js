@@ -1,8 +1,8 @@
 define({
     "root": {
         "EnterYourName": "Enter your name",
-		"StartGame" : "Start Game",
-		"Help" : "Help"
+        "StartGame" : "Start Game",
+        "Help" : "Help"
     },
-	"fr-fr": true
+    "fr-fr": true
 });

@@ -3,11 +3,12 @@
 define(
     [
         'jquery',
+        'underscore',
         'backbone',
         'text!templates/HelpViewTemplate.html',
         "i18n!i18nBundles/nls/helpPage_module"
     ],
-    function ($, Backbone, HelpViewTemplate, HelpPageModule) {
+    function ($, _, Backbone, HelpViewTemplate, HelpPageModule) {
 
         'use strict';
 
@@ -20,21 +21,20 @@ define(
             },
 
             render: function () {
-                $(this.el).html(_.template(this.template, 
+                $(this.el).html(_.template(this.template,
                     {
                         "locale" : HelpPageModule,
                         "options" : this.options
-                    })
-                );
+                    }));
                 return this;
             },
 
             events : {
-                'click .back' : "backButtonClicked",
+                'click .back' : "backButtonClicked"
             },
 
             backButtonClicked : function () {
-                    this.goTo("home");
+                this.goTo("home");
             }
         });
 
