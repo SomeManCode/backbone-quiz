@@ -2,5 +2,5 @@ define({
     "root": {
         "Back": "Back"
     },
-	"fr-fr": true
+    "fr-fr": true
 });

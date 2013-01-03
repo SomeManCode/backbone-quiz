@@ -1,10 +1,10 @@
 define({
     "root": {
-		"Results" : "Results",
+        "Results" : "Results",
         "Congratulations" : "Congratulations",
-		"Score" : "Score",
-		"PlayAgain" : "Play Again",
-		"NewGame" : "New Game",
+        "Score" : "Score",
+        "PlayAgain" : "Play Again",
+        "NewGame" : "New Game"
     },
-	"fr-fr": true
+    "fr-fr": true
 });

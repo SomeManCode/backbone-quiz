@@ -9,9 +9,9 @@ define(
             defaults : {
                 name: "en-us"
             },
-			initialize: function(options) {
-				this.set('name', options.name);
-			}
+            initialize: function (options) {
+                this.set('name', options.name);
+            }
 
         });
         return LanguageModel;
