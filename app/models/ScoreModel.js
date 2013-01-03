@@ -17,7 +17,7 @@ define(
             },
 
             initialize: function (options) {
-                var self = this, questions = options.questions, responses = options.responses;
+                var questions = options.questions, responses = options.responses;
                 this.update(questions, responses);
             },
             update: function (questions, responses) {

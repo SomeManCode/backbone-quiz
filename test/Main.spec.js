@@ -1,7 +1,7 @@
 define(
     [
         //Models
-        'models/QuestionModel.spec'
+        '/test/models/QuestionModel.spec.js'
     ],
     function (
         QuestionModelSpec

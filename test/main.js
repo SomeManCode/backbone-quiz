@@ -1,9 +1,11 @@
+//Update baseURL
+requirejsConfig.baseUrl = "../app/";
 requirejs.config(requirejsConfig);
 
 requirejs(
     [
         'dom_ready',
-        'Main.spec'
+        '/test/Main.spec.js'
     ],
     function (domReady, Debug) {
         'use strict';
