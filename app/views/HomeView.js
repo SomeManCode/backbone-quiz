@@ -69,11 +69,10 @@ define(
             disableGame : function () {
                 $(this.el).find('.start_game').addClass('disabled');
             },
+
             helpClicked: function () {
                 this.goTo("help");
             }
-
-
         });
 
         return HomeView;
