@@ -1,4 +1,4 @@
-/*global __dirname*/
+/*global __dirname, require, console*/
 
 var fs = require('fs');
 var walk = function (dir, done) {
@@ -41,28 +41,47 @@ var walk = function (dir, done) {
 };
 
 var curpath = __dirname.replace(/\\/g, '/');
-var jspath = curpath + "/../../app";
+var jspaths = [
+        curpath + "/../../app",
+        curpath + "/../../test"
+    ];
 
-walk(jspath, function (err, results) {
+var str = "",
+    i = 0,
+    j;
+
+var walkFunction = function (err, results) {
     'use strict';
     if (err) {
         throw err;
     }
-    var str = "var files_list =\n    [\n",
-        i;
-    for (i = 0; i < results.length; i = i + 1) {
-        if (i > 0) {
+    for (j = 0; j < results.length; j = j + 1) {
+        if (str.length > 0) {
             str += ",\n";
         }
-        str += "        '" + results[i].replace(curpath, "").substr(1) + "'";
+        str += "        '" + results[j].replace(curpath, "").substr(1) + "'";
     }
-    str += "\n    ];";
 
-    fs.writeFile("../js/files.js", str, function (err) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("The file was saved!");
-        }
-    });
-});
+    //If there are any pending paths walk in those directories.
+    if (i < jspaths.length - 1) {
+
+        i = i + 1;
+        walk(jspaths[i], walkFunction);
+
+    } else {
+
+        //Walking completed in all directories. Now save file.
+        str = "var files_list =\n    [\n" + str + "\n    ];";
+
+        fs.writeFile("../js/files.js", str, function (err) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log("The file was saved!");
+            }
+        });
+    }
+};
+
+//Start walking
+walk(jspaths[i], walkFunction);

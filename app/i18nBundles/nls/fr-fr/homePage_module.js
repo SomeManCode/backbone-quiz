@@ -1,5 +1,5 @@
 define({
     "EnterYourName": "Entrez votre nom",
-    "StartGame" : "Démarrer un jeu.",
+    "StartGame" : "D&eacute;marrer un jeu.",
     "Help" : "aider"
 });

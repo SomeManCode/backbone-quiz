@@ -1,4 +1,4 @@
-/*global jasmine, JSLINT, files_list*/
+/*global _, jasmine, JSLINT, files_list*/
 
 describe('JSLint', function () {
     'use strict';

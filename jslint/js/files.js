@@ -24,5 +24,11 @@ var files_list =
         '../../app/views/QuestionsView.js',
         '../../app/views/QuestionView.js',
         '../../app/views/QuizView.js',
-        '../../app/views/ScoreView.js'
+        '../../app/views/ScoreView.js',
+        '../../test/main.js',
+        '../../test/Main.spec.js',
+        '../../test/models/LanguageModel.spec.js',
+        '../../test/models/QuestionModel.spec.js',
+        '../../test/models/QuizModel.spec.js',
+        '../../test/models/ScoreModel.spec.js'
     ];

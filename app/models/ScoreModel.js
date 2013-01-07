@@ -13,15 +13,16 @@ define(
                 "score" : 0,
                 "total_questions" : 0,
                 "correct_questions" : 0,
-                "total_score" : 0
+                "total_score" : 0,
+                "questions" : [],
+                "responses" : []
             },
-
-            initialize: function (options) {
-                var questions = options.questions, responses = options.responses;
-                this.update(questions, responses);
-            },
-            update: function (questions, responses) {
-                var self = this, question_weight, correct_answer_string;
+            update: function () {
+                var self = this,
+                    questions = this.get('questions'),
+                    responses = this.get('responses'),
+                    question_weight,
+                    correct_answer_string;
                 self.set('total_questions', questions.length);
                 _.each(responses, function (value, index) {
                     question_weight = questions[index].get('weight');

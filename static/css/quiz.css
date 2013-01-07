@@ -67,8 +67,8 @@ input[type=text]  {
 	color: #ffffff;
 	border: 2px solid #333333;
 	border-radius: 44px;
-	height: 3.1em;
-	width: 28.1em;
+	height: 2em;
+	width: 20em;
 	font-family: CuprumFFU;
 	text-shadow:2px 2px black;
 	background: rgba(255, 255, 255, 0.15);
@@ -135,10 +135,11 @@ footer {
 
 div.timer{
 	height: 145px;
-	left: 45%;
+	left: 50%;
 	position: absolute;
 	top: -100px;
 	width: 104px;
+	margin-left : -52px;
 }
 div.analogTimer
 {
@@ -194,9 +195,7 @@ div.analogTimer
 }
 
 .content #question_view ul li.answer.active, .content #question_view ul li.answer.active:hover{
-    background-color:rgba(255, 255, 255, 0.35);
-    background-image: url("../../screens/resources/tick.png");
-    background-repeat: no-repeat;
+    background: rgba(255, 255, 255, 0.35) url("../../screens/resources/tick.png") no-repeat 10px center; 
 }
 
 div.appSettings{
