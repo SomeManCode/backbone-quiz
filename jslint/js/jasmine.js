@@ -1,11 +1,7 @@
-/*global _, jasmine, JSLINT, files_list*/
+/*global jasmine, JSLINT, files_list, jslint_config*/
 
 describe('JSLint', function () {
     'use strict';
-    var options = {
-        predef: ['requirejs', 'define', 'requirejsConfig', 'describe', 'jasmine', 'window', 'beforeEach', 'expect', 'it', 'spyOn'],
-        nomen : true
-    };
     function get(path) {
         path = path + "?" + new Date().getTime();
 
@@ -25,13 +21,11 @@ describe('JSLint', function () {
     }
 
     _.each(files_list, function (element) {
-        var script = element;
-
-        it(script, function () {
+        it(element, function () {
 
             var self = this,
-                source = get(script),
-                result = JSLINT(source, options);
+                source = get(element);
+            JSLINT(source, jslint_config);
             _.each(JSLINT.errors, function (error) {
                 self.addMatcherResult(new jasmine.ExpectationResult({
                     passed: false,

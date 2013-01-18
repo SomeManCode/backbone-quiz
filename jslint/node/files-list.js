@@ -1,6 +1,13 @@
 /*global __dirname, require, console*/
 
-var fs = require('fs');
+var fs = require('fs'),
+    node_config = require('../node_config'),
+    jspaths = node_config.js_paths,
+    curpath = __dirname.replace(/\\/g, '/'),
+    str = "",
+    i = 0,
+    j;
+    
 var walk = function (dir, done) {
     'use strict';
     var results = [];
@@ -40,15 +47,6 @@ var walk = function (dir, done) {
     });
 };
 
-var curpath = __dirname.replace(/\\/g, '/');
-var jspaths = [
-        curpath + "/../../app",
-        curpath + "/../../test"
-    ];
-
-var str = "",
-    i = 0,
-    j;
 
 var walkFunction = function (err, results) {
     'use strict';
@@ -59,19 +57,19 @@ var walkFunction = function (err, results) {
         if (str.length > 0) {
             str += ",\n";
         }
-        str += "        '" + results[j].replace(curpath, "").substr(1) + "'";
+        str += "    '" + results[j].replace(curpath, "").substr(1) + "'";
     }
 
     //If there are any pending paths walk in those directories.
     if (i < jspaths.length - 1) {
 
         i = i + 1;
-        walk(jspaths[i], walkFunction);
+        walk(curpath + "/../" + jspaths[i], walkFunction);
 
     } else {
 
         //Walking completed in all directories. Now save file.
-        str = "var files_list =\n    [\n" + str + "\n    ];";
+        str = "var files_list = [\n" + str + "\n];";
 
         fs.writeFile("../js/files.js", str, function (err) {
             if (err) {
@@ -84,4 +82,4 @@ var walkFunction = function (err, results) {
 };
 
 //Start walking
-walk(jspaths[i], walkFunction);
+walk(curpath + "/../" + jspaths[i], walkFunction);
