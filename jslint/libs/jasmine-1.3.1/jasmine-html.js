@@ -78,6 +78,7 @@ jasmine.HtmlReporter = function(_doc) {
 
     createReporterDom(runner.env.versionString());
     doc.body.appendChild(dom.reporter);
+    setExceptionHandling();
 
     reporterView = new jasmine.HtmlReporter.ReporterView(dom);
     reporterView.addSpecs(specs, self.specFilter);
@@ -151,7 +152,10 @@ jasmine.HtmlReporter = function(_doc) {
         self.createDom('span', { className: 'version' }, version)),
 
       dom.symbolSummary = self.createDom('ul', {className: 'symbolSummary'}),
-      dom.alert = self.createDom('div', {className: 'alert'}),
+      dom.alert = self.createDom('div', {className: 'alert'},
+        self.createDom('span', { className: 'exceptions' },
+          self.createDom('label', { className: 'label', 'for': 'no_try_catch' }, 'No try/catch'),
+          self.createDom('input', { id: 'no_try_catch', type: 'checkbox' }))),
       dom.results = self.createDom('div', {className: 'results'},
         dom.summary = self.createDom('div', { className: 'summary' }),
         dom.details = self.createDom('div', { id: 'details' }))
@@ -448,6 +452,10 @@ jasmine.HtmlReporter.SpecView.prototype.appendFailureDetail = function() {
       messagesDiv.appendChild(this.createDom('div', {className: 'resultMessage log'}, result.toString()));
     } else if (result.type == 'expect' && result.passed && !result.passed()) {
       messagesDiv.appendChild(this.createDom('div', {className: 'resultMessage fail'}, result.message));
+
+      if (result.trace.stack) {
+        messagesDiv.appendChild(this.createDom('div', {className: 'stackTrace'}, result.trace.stack));
+      }
     }
   }
 
@@ -629,6 +637,10 @@ jasmine.TrivialReporter.prototype.reportSpecResults = function(spec) {
       messagesDiv.appendChild(this.createDom('div', {className: 'resultMessage log'}, result.toString()));
     } else if (result.type == 'expect' && result.passed && !result.passed()) {
       messagesDiv.appendChild(this.createDom('div', {className: 'resultMessage fail'}, result.message));
+
+      if (result.trace.stack) {
+        messagesDiv.appendChild(this.createDom('div', {className: 'stackTrace'}, result.trace.stack));
+      }
     }
   }
 

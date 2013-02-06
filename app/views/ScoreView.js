@@ -25,6 +25,8 @@ define(
                     "responses" : options.responses,
                     "questions": options.questionModels
                 });
+                //Calculate scores
+                this.model.update();
                 this.LanguageModel = new LanguageModel({"name": window.localStorage.getItem('language') || "en-us"});
                 this.localeOptions = {
                     "locale" : ScoreViewModule,

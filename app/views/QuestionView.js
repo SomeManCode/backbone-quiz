@@ -16,7 +16,7 @@ define(
             template : _.template(QuestionViewTemplate),
 
             initialize: function () {
-                //_.bindAll(this, "answerSelected");
+
             },
 
             render: function () {
